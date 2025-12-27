@@ -1,0 +1,7 @@
+{
+  "name": "Legacy - Story Preservation",
+  "description": "Transform your wisdom and experiences into an interactive AI companion for future generations.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}

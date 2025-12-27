@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legacy - Story Preservation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap');
+        
+        :root {
+            --bg: #fdfaf6; /* Warm cream */
+            --text: #2d241e; /* Deep espresso */
+            --line: #e8e1d9; /* Soft clay */
+            --accent: #8b5e3c; /* Bronze/Leather brown */
+            --accent-soft: #f4eee7; /* Light linen */
+            --hover: #f0e6db; /* Warm beige */
+            --section-bg: #ffffff;
+            --success: #6b8e23; /* Olive green */
+        }
+
+        [data-theme="dark"] {
+            --bg: #1a1512; /* Deep espresso black */
+            --text: #e8e1d9; /* Linen white */
+            --line: #3d2f26; /* Dark mahogany */
+            --accent: #c69b7b; /* Soft gold/bronze */
+            --accent-soft: #2d241e; /* Deep coffee */
+            --hover: #261d18;
+            --section-bg: #211a16;
+            --success: #98b06d;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            transition: background 0.4s ease, color 0.4s ease;
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-size: 18px;
+        }
+
+        .serif { font-family: 'Playfair Display', serif; }
+
+        .border-thin { border: 1px solid var(--line); }
+        .border-t-thin { border-top: 1px solid var(--line); }
+        .border-b-thin { border-bottom: 1px solid var(--line); }
+        .border-l-thin { border-left: 1px solid var(--line); }
+        .border-r-thin { border-right: 1px solid var(--line); }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg); }
+        ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 4px; border: 2px solid var(--bg); }
+        
+        .letter-spacing-wide { letter-spacing: 0.1em; }
+        .letter-spacing-v-wide { letter-spacing: 0.25em; }
+
+        input, textarea {
+            font-family: inherit;
+            background: transparent;
+        }
+
+        .no-gap-container > * {
+            margin-bottom: 1.5rem;
+        }
+
+        /* Activity Grid - Legacy Tapestry */
+        .activity-cell {
+            width: 16px;
+            height: 16px;
+            border: 1px solid var(--line);
+            border-radius: 4px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .activity-cell.active {
+            background-color: var(--accent);
+            border-color: var(--accent);
+            box-shadow: 0 0 12px rgba(139, 94, 60, 0.3);
+            transform: scale(1.1);
+        }
+        .activity-cell:hover {
+            border-color: var(--accent);
+            cursor: pointer;
+        }
+
+        @media (max-width: 1024px) {
+            .app-grid {
+                display: flex !important;
+                flex-direction: column !important;
+                height: auto !important;
+            }
+            .sidebar-fixed, .right-sidebar {
+                width: 100% !important;
+                border: none !important;
+                border-bottom: 1px solid var(--line);
+            }
+        }
+        
+        .comfort-shadow {
+            box-shadow: 0 10px 30px -10px rgba(45, 36, 30, 0.08);
+        }
+
+        .btn-comfort {
+            transition: all 0.3s ease;
+        }
+        .btn-comfort:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px -8px var(--accent);
+        }
+        .btn-comfort:active {
+            transform: translateY(0);
+        }
+
+        .tapestry-legend span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.34.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body>
+    <div id="root"></div>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
